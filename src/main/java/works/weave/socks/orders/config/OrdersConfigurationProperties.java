@@ -9,11 +9,11 @@ public class OrdersConfigurationProperties {
     private String domain = "";
 
     public URI getPaymentUri() {
-        return new ServiceUri(new Hostname("payment"), new Domain(domain), "/paymentAuth").toUri();
+        return new ServiceUri(new Hostname("payment:8080"), new Domain(domain), "/paymentAuth").toUri();
     }
 
     public URI getShippingUri() {
-        return new ServiceUri(new Hostname("shipping"), new Domain(domain), "/shipping").toUri();
+        return new ServiceUri(new Hostname("shipping:8080"), new Domain(domain), "/shipping").toUri();
     }
 
     public void setDomain(String domain) {
